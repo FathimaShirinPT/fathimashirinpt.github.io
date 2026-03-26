@@ -5,17 +5,19 @@
 
   <style>
     :root {
-      --bg: #0f172a;
-      --card: #1e293b;
-      --text: #e2e8f0;
-      --accent: #38bdf8;
+      --bg: #0b1120;
+      --card: #1c1f2b;
+      --text: #e5e7eb;
+      --accent: #8b5cf6;
+      --accent2: #22d3ee;
     }
 
     .light-mode {
-      --bg: #f1f5f9;
+      --bg: #f8fafc;
       --card: #ffffff;
       --text: #0f172a;
-      --accent: #2563eb;
+      --accent: #7c3aed;
+      --accent2: #06b6d4;
     }
 
     body {
@@ -47,6 +49,7 @@
       border-radius: 50%;
       object-fit: cover;
       margin-bottom: 15px;
+      border: 3px solid var(--accent);
     }
 
     h1 {
@@ -54,7 +57,7 @@
     }
 
     .typing {
-      color: var(--accent);
+      color: var(--accent2);
       font-weight: bold;
     }
 
@@ -81,6 +84,7 @@
       padding: 25px;
       border-radius: 12px;
       transition: 0.3s;
+      border-left: 4px solid var(--accent);
     }
 
     section:hover {
@@ -112,10 +116,14 @@
       display: inline-block;
       margin-top: 15px;
       padding: 10px 15px;
-      background: var(--accent);
+      background: linear-gradient(45deg, var(--accent), var(--accent2));
       color: white;
       border-radius: 6px;
       text-decoration: none;
+    }
+
+    .edu-item {
+      margin-bottom: 15px;
     }
 
     html {
@@ -135,6 +143,7 @@
 
   <nav>
     <a href="#summary">Summary</a>
+    <a href="#education">Education</a>
     <a href="#skills">Skills</a>
     <a href="#projects">Projects</a>
   </nav>
@@ -146,7 +155,39 @@
 
   <section id="summary">
     <h2>Professional Summary</h2>
-    <p>Your short intro goes here.</p>
+    <p>Your intro goes here.</p>
+  </section>
+
+  <!-- EDUCATION SECTION -->
+  <section id="education">
+    <h2>Education</h2>
+
+    <div class="edu-item">
+      <strong>10th (SSLC)</strong><br>
+      School Name<br>
+      Year: XXXX | CGPA: X.X
+    </div>
+
+    <div class="edu-item">
+      <strong>12th (Higher Secondary)</strong><br>
+      School Name<br>
+      Year: XXXX | CGPA: X.X
+    </div>
+
+    <div class="edu-item">
+      <strong>Undergraduate (UG)</strong><br>
+      College Name<br>
+      Course Name<br>
+      Year: XXXX - XXXX | CGPA: X.X
+    </div>
+
+    <div class="edu-item">
+      <strong>Postgraduate (PG)</strong><br>
+      College Name<br>
+      Course Name<br>
+      Year: XXXX - XXXX | CGPA: X.X
+    </div>
+
   </section>
 
   <section id="skills">
@@ -161,12 +202,12 @@
 
       <div class="card">
         <h3>Project 1</h3>
-        <p>Short description</p>
+        <p>Description</p>
       </div>
 
       <div class="card">
         <h3>Project 2</h3>
-        <p>Short description</p>
+        <p>Description</p>
       </div>
 
     </div>
@@ -180,7 +221,7 @@ function toggleMode() {
   document.body.classList.toggle("light-mode");
 }
 
-// Typing effect
+// Typing animation
 const words = ["Web Developer", "Student", "Tech Enthusiast"];
 let i = 0, j = 0, currentWord = "", isDeleting = false;
 
