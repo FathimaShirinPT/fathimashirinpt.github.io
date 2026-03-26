@@ -1,41 +1,68 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Your Name - Resume</title>
+  <title>Your Name - Portfolio</title>
 
   <style>
+    :root {
+      --bg: #0f172a;
+      --card: #1e293b;
+      --text: #e2e8f0;
+      --accent: #38bdf8;
+    }
+
+    .light-mode {
+      --bg: #f1f5f9;
+      --card: #ffffff;
+      --text: #0f172a;
+      --accent: #2563eb;
+    }
+
     body {
-      font-family: 'Segoe UI', sans-serif;
       margin: 0;
-      background: #0f172a;
-      color: #e2e8f0;
+      font-family: 'Segoe UI', sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      transition: 0.3s;
     }
 
     header {
-      background: #1e293b;
-      padding: 20px;
       text-align: center;
-      position: sticky;
-      top: 0;
+      padding: 40px 20px;
     }
 
-    header h1 {
-      margin: 0;
+    .profile {
+      width: 120px;
+      height: 120px;
+      border-radius: 50%;
+      background: var(--accent);
+      display: inline-block;
+      margin-bottom: 15px;
     }
 
-    nav {
-      margin-top: 10px;
+    h1 {
+      margin: 10px 0;
     }
 
     nav a {
-      color: #38bdf8;
       margin: 0 10px;
+      color: var(--accent);
       text-decoration: none;
       font-weight: bold;
     }
 
-    nav a:hover {
-      color: #0ea5e9;
+    nav {
+      margin-top: 15px;
+    }
+
+    .toggle {
+      position: absolute;
+      right: 20px;
+      top: 20px;
+      cursor: pointer;
+      padding: 8px 12px;
+      border-radius: 20px;
+      background: var(--card);
     }
 
     .container {
@@ -45,27 +72,19 @@
     }
 
     section {
-      background: #1e293b;
+      background: var(--card);
       margin: 20px 0;
       padding: 20px;
-      border-radius: 10px;
-      transition: transform 0.2s;
+      border-radius: 12px;
+      transition: 0.3s;
     }
 
     section:hover {
-      transform: scale(1.02);
+      transform: translateY(-5px);
     }
 
     h2 {
-      color: #38bdf8;
-    }
-
-    ul {
-      padding-left: 20px;
-    }
-
-    a {
-      color: #38bdf8;
+      color: var(--accent);
     }
 
     html {
@@ -76,7 +95,10 @@
 
 <body>
 
+<div class="toggle" onclick="toggleMode()">🌙 Toggle</div>
+
 <header>
+  <div class="profile"></div>
   <h1>Your Name</h1>
   <p>📍 City | ✉️ Email | 📞 Phone</p>
 
@@ -93,7 +115,7 @@
 
   <section id="summary">
     <h2>Professional Summary</h2>
-    <p>Write a short intro about yourself and your goals.</p>
+    <p>Your intro goes here.</p>
   </section>
 
   <section id="education">
@@ -103,33 +125,27 @@
 
   <section id="skills">
     <h2>Skills</h2>
-    <ul>
-      <li>HTML</li>
-      <li>CSS</li>
-      <li>JavaScript</li>
-    </ul>
+    <p>HTML, CSS, JavaScript</p>
   </section>
 
   <section id="projects">
     <h2>Projects</h2>
-
     <p><strong>Project Name</strong></p>
-    <ul>
-      <li>What it does</li>
-      <li>Technologies used</li>
-    </ul>
-
+    <p>Short description</p>
   </section>
 
   <section id="experience">
     <h2>Experience</h2>
     <p><strong>Role</strong> — Company</p>
-    <ul>
-      <li>Your work</li>
-    </ul>
   </section>
 
 </div>
+
+<script>
+function toggleMode() {
+  document.body.classList.toggle("light-mode");
+}
+</script>
 
 </body>
 </html>
