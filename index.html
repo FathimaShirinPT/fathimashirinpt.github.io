@@ -2,91 +2,134 @@
 <html>
 <head>
   <title>Your Name - Resume</title>
+
   <style>
     body {
-      font-family: Arial, sans-serif;
-      margin: 40px;
-      background-color: #f4f4f4;
-      color: #333;
+      font-family: 'Segoe UI', sans-serif;
+      margin: 0;
+      background: #0f172a;
+      color: #e2e8f0;
     }
+
+    header {
+      background: #1e293b;
+      padding: 20px;
+      text-align: center;
+      position: sticky;
+      top: 0;
+    }
+
+    header h1 {
+      margin: 0;
+    }
+
+    nav {
+      margin-top: 10px;
+    }
+
+    nav a {
+      color: #38bdf8;
+      margin: 0 10px;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    nav a:hover {
+      color: #0ea5e9;
+    }
+
     .container {
-      max-width: 800px;
-      background: #fff;
-      padding: 30px;
+      max-width: 900px;
       margin: auto;
-      border-radius: 10px;
+      padding: 20px;
     }
-    h1, h2 {
-      color: #222;
-    }
-    h1 {
-      border-bottom: 2px solid #ddd;
-      padding-bottom: 10px;
-    }
+
     section {
-      margin-top: 20px;
+      background: #1e293b;
+      margin: 20px 0;
+      padding: 20px;
+      border-radius: 10px;
+      transition: transform 0.2s;
     }
+
+    section:hover {
+      transform: scale(1.02);
+    }
+
+    h2 {
+      color: #38bdf8;
+    }
+
     ul {
       padding-left: 20px;
     }
+
     a {
-      color: #0077cc;
-      text-decoration: none;
+      color: #38bdf8;
+    }
+
+    html {
+      scroll-behavior: smooth;
     }
   </style>
 </head>
 
 <body>
-  <div class="container">
 
-    <h1>Your Name</h1>
-    <p>
-      📍 City, Country | 📞 Phone | ✉️ Email <br>
-      <a href="#">GitHub</a> | <a href="#">LinkedIn</a>
-    </p>
+<header>
+  <h1>Your Name</h1>
+  <p>📍 City | ✉️ Email | 📞 Phone</p>
 
-    <section>
-      <h2>Professional Summary</h2>
-      <p>
-        Write a short 2–3 line summary about yourself, your skills, and your goals.
-      </p>
-    </section>
+  <nav>
+    <a href="#summary">Summary</a>
+    <a href="#education">Education</a>
+    <a href="#skills">Skills</a>
+    <a href="#projects">Projects</a>
+    <a href="#experience">Experience</a>
+  </nav>
+</header>
 
-    <section>
-      <h2>Education</h2>
-      <p><strong>Your Course</strong><br>
-      Your College — Year</p>
-    </section>
+<div class="container">
 
-    <section>
-      <h2>Skills</h2>
-      <ul>
-        <li>HTML</li>
-        <li>CSS</li>
-        <li>JavaScript</li>
-        <li>Other Skills</li>
-      </ul>
-    </section>
+  <section id="summary">
+    <h2>Professional Summary</h2>
+    <p>Write a short intro about yourself and your goals.</p>
+  </section>
 
-    <section>
-      <h2>Projects</h2>
+  <section id="education">
+    <h2>Education</h2>
+    <p><strong>Your Course</strong><br>Your College — Year</p>
+  </section>
 
-      <p><strong>Project Name</strong></p>
-      <ul>
-        <li>What it does</li>
-        <li>Technologies used</li>
-      </ul>
+  <section id="skills">
+    <h2>Skills</h2>
+    <ul>
+      <li>HTML</li>
+      <li>CSS</li>
+      <li>JavaScript</li>
+    </ul>
+  </section>
 
-    </section>
+  <section id="projects">
+    <h2>Projects</h2>
 
-    <section>
-      <h2>Experience</h2>
-      <p><strong>Role</strong> — Company</p>
-      <ul>
-        <li>Your work</li>
-      </ul>
-    </section>
+    <p><strong>Project Name</strong></p>
+    <ul>
+      <li>What it does</li>
+      <li>Technologies used</li>
+    </ul>
 
-  </div>
+  </section>
+
+  <section id="experience">
+    <h2>Experience</h2>
+    <p><strong>Role</strong> — Company</p>
+    <ul>
+      <li>Your work</li>
+    </ul>
+  </section>
+
+</div>
+
 </body>
 </html>
