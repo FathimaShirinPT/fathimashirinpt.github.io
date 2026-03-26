@@ -26,22 +26,36 @@
       transition: 0.3s;
     }
 
+    .toggle {
+      position: fixed;
+      right: 20px;
+      top: 20px;
+      cursor: pointer;
+      padding: 8px 12px;
+      border-radius: 20px;
+      background: var(--card);
+    }
+
     header {
       text-align: center;
-      padding: 40px 20px;
+      padding: 50px 20px;
     }
 
     .profile {
       width: 120px;
       height: 120px;
       border-radius: 50%;
-      background: var(--accent);
-      display: inline-block;
+      object-fit: cover;
       margin-bottom: 15px;
     }
 
     h1 {
       margin: 10px 0;
+    }
+
+    .typing {
+      color: var(--accent);
+      font-weight: bold;
     }
 
     nav a {
@@ -55,18 +69,8 @@
       margin-top: 15px;
     }
 
-    .toggle {
-      position: absolute;
-      right: 20px;
-      top: 20px;
-      cursor: pointer;
-      padding: 8px 12px;
-      border-radius: 20px;
-      background: var(--card);
-    }
-
     .container {
-      max-width: 900px;
+      max-width: 1000px;
       margin: auto;
       padding: 20px;
     }
@@ -74,7 +78,7 @@
     section {
       background: var(--card);
       margin: 20px 0;
-      padding: 20px;
+      padding: 25px;
       border-radius: 12px;
       transition: 0.3s;
     }
@@ -87,6 +91,33 @@
       color: var(--accent);
     }
 
+    .projects {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 15px;
+    }
+
+    .card {
+      background: var(--bg);
+      padding: 15px;
+      border-radius: 10px;
+      transition: 0.3s;
+    }
+
+    .card:hover {
+      transform: scale(1.05);
+    }
+
+    .btn {
+      display: inline-block;
+      margin-top: 15px;
+      padding: 10px 15px;
+      background: var(--accent);
+      color: white;
+      border-radius: 6px;
+      text-decoration: none;
+    }
+
     html {
       scroll-behavior: smooth;
     }
@@ -95,48 +126,51 @@
 
 <body>
 
-<div class="toggle" onclick="toggleMode()">🌙 Toggle</div>
+<div class="toggle" onclick="toggleMode()">🌙</div>
 
 <header>
-  <div class="profile"></div>
+  <img src="yourphoto.jpg" class="profile">
   <h1>Your Name</h1>
-  <p>📍 City | ✉️ Email | 📞 Phone</p>
+  <p>I am a <span class="typing" id="typing"></span></p>
 
   <nav>
     <a href="#summary">Summary</a>
-    <a href="#education">Education</a>
     <a href="#skills">Skills</a>
     <a href="#projects">Projects</a>
-    <a href="#experience">Experience</a>
   </nav>
+
+  <a href="resume.pdf" class="btn" download>📄 Download Resume</a>
 </header>
 
 <div class="container">
 
   <section id="summary">
     <h2>Professional Summary</h2>
-    <p>Your intro goes here.</p>
-  </section>
-
-  <section id="education">
-    <h2>Education</h2>
-    <p><strong>Your Course</strong><br>Your College — Year</p>
+    <p>Your short intro goes here.</p>
   </section>
 
   <section id="skills">
     <h2>Skills</h2>
-    <p>HTML, CSS, JavaScript</p>
+    <p>HTML • CSS • JavaScript • Python</p>
   </section>
 
   <section id="projects">
     <h2>Projects</h2>
-    <p><strong>Project Name</strong></p>
-    <p>Short description</p>
-  </section>
 
-  <section id="experience">
-    <h2>Experience</h2>
-    <p><strong>Role</strong> — Company</p>
+    <div class="projects">
+
+      <div class="card">
+        <h3>Project 1</h3>
+        <p>Short description</p>
+      </div>
+
+      <div class="card">
+        <h3>Project 2</h3>
+        <p>Short description</p>
+      </div>
+
+    </div>
+
   </section>
 
 </div>
@@ -145,6 +179,36 @@
 function toggleMode() {
   document.body.classList.toggle("light-mode");
 }
+
+// Typing effect
+const words = ["Web Developer", "Student", "Tech Enthusiast"];
+let i = 0, j = 0, currentWord = "", isDeleting = false;
+
+function type() {
+  currentWord = words[i];
+  if (isDeleting) {
+    document.getElementById("typing").textContent =
+      currentWord.substring(0, j--);
+  } else {
+    document.getElementById("typing").textContent =
+      currentWord.substring(0, j++);
+  }
+
+  if (!isDeleting && j === currentWord.length) {
+    isDeleting = true;
+    setTimeout(type, 1000);
+    return;
+  }
+
+  if (isDeleting && j === 0) {
+    isDeleting = false;
+    i = (i + 1) % words.length;
+  }
+
+  setTimeout(type, isDeleting ? 50 : 100);
+}
+
+type();
 </script>
 
 </body>
