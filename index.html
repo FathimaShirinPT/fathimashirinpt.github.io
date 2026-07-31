@@ -7,55 +7,17 @@
     <link rel="stylesheet" href="style.css">
     <script src="theme.js"></script>
     <style>
-        /* Specific CSS styles matching the reference homepage layout */
-        
-        /* Navigation Lowercase Styling */
-        .nav-links a {
-            text-transform: lowercase;
-        }
-
-        .dropdown {
-            position: relative;
-            display: inline-block;
-        }
-
-        .dropdown-content {
-            display: none;
-            position: absolute;
-            background-color: var(--card-bg);
-            min-width: 120px;
-            box-shadow: 0px 8px 16px rgba(0,0,0,0.1);
-            border: 1px solid var(--border-color);
-            border-radius: 6px;
-            z-index: 10;
-        }
-
-        .dropdown-content a {
-            color: var(--text-muted);
-            padding: 8px 12px;
-            text-decoration: none;
-            display: block;
-        }
-
-        .dropdown:hover .dropdown-content {
-            display: block;
-        }
-
-        /* Hero / About Section */
         .hero-container {
             display: grid;
-            grid-template-columns: 1fr 300px;
+            grid-template-columns: 1fr 280px;
             gap: 2.5rem;
             align-items: start;
             margin-top: 2rem;
-            margin-bottom: 2rem;
         }
 
         .hero-title {
             font-size: 2.8rem;
             font-weight: 300;
-            color: var(--text-primary);
-            margin-bottom: 0.2rem;
             letter-spacing: -0.5px;
         }
 
@@ -64,24 +26,22 @@
         }
 
         .hero-subtitle {
-            color: #c026d3; /* Soft vibrant purple */
-            font-size: 1.15rem;
-            font-weight: 400;
+            color: var(--accent-purple);
+            font-size: 1.1rem;
             margin-bottom: 1.8rem;
         }
 
         .hero-bio {
             font-size: 1.05rem;
             line-height: 1.6;
-            color: var(--text-primary);
         }
 
         .hero-bio p {
-            margin-bottom: 1.2rem;
+            margin-bottom: 1rem;
         }
 
         .purple-link {
-            color: #c026d3;
+            color: var(--accent-purple);
             text-decoration: none;
         }
 
@@ -89,20 +49,18 @@
             text-decoration: underline;
         }
 
-        .profile-img-hero {
+        .profile-img {
             width: 100%;
-            height: auto;
             border-radius: 12px;
             object-fit: cover;
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+            box-shadow: 0 4px 12px rgba(0,0,0,0.08);
         }
 
-        /* Mobile Responsiveness */
         @media (max-width: 768px) {
             .hero-container {
                 grid-template-columns: 1fr;
             }
-            .profile-img-hero {
+            .profile-img {
                 max-width: 250px;
                 margin: 0 auto;
             }
@@ -113,31 +71,20 @@
 
     <header>
         <nav>
-            <a href="index.html" class="logo" style="visibility: hidden;">Fathima Shirin</a>
             <div class="nav-right">
                 <ul class="nav-links">
                     <li><a href="index.html" class="active">about</a></li>
-                    <li><a href="education.html">research</a></li>
-                    <li><a href="projects.html">talks, etc.</a></li>
+                    <li><a href="projects.html">projects</a></li>
                     <li><a href="cv.html">cv</a></li>
-                    <li><a href="miscellaneous.html">miscellaneous</a></li>
-                    <li class="dropdown">
-                        <a href="#">more ▾</a>
-                        <div class="dropdown-content">
-                            <a href="#">Teaching</a>
-                            <a href="#">Outreach</a>
-                        </div>
-                    </li>
                 </ul>
-                <button class="theme-toggle" id="themeBtn" onclick="toggleTheme()" aria-label="Toggle dark mode">🌙</button>
+                <button class="theme-toggle" id="themeBtn" onclick="toggleTheme()" aria-label="Toggle theme">☀️</button>
             </div>
         </nav>
     </header>
 
     <main>
-        <!-- Hero / Top Section -->
         <div class="hero-container">
-            <div class="hero-text-block">
+            <div class="hero-text">
                 <h1 class="hero-title"><strong>Fathima</strong> Shirin</h1>
                 <div class="hero-subtitle">National Institute of Technology, Calicut</div>
 
@@ -146,13 +93,13 @@
                         Hi! I am Fathima Shirin, a Ph.D. scholar at the <a href="https://nitc.ac.in" class="purple-link" target="_blank">National Institute of Technology Calicut</a>.
                     </p>
                     <p>
-                        Welcome to my website! You can navigate through the links above to learn more about my research, background, and academic activities.
+                        Welcome to my website! You can explore my <a href="projects.html" class="purple-link">projects</a> or view my <a href="cv.html" class="purple-link">cv</a> using the navigation links above.
                     </p>
                 </div>
             </div>
 
-            <div class="hero-image-block">
-                <img src="profile.jpg" alt="Fathima Shirin" class="profile-img-hero">
+            <div>
+                <img src="profile.jpg" alt="Fathima Shirin" class="profile-img">
             </div>
         </div>
     </main>
