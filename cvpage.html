@@ -3,22 +3,144 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CV</title>
+    <title>CV - Fathima</title>
     <link rel="stylesheet" href="style.css">
     <script src="theme.js"></script>
+    <style>
+        /* Specific CSS styles matching the reference image layout */
+        .cv-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 2rem;
+        }
+
+        .cv-header h1 {
+            font-size: 2.2rem;
+            font-weight: 500;
+            color: var(--text-primary);
+        }
+
+        .pdf-link {
+            display: flex;
+            align-items: center;
+            text-decoration: none;
+            transition: transform 0.2s ease;
+        }
+
+        .pdf-link:hover {
+            transform: scale(1.1);
+        }
+
+        .pdf-icon {
+            width: 32px;
+            height: 32px;
+            fill: #a21caf; /* Purple accent color */
+        }
+
+        .cv-card {
+            background: var(--card-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            padding: 2rem;
+            margin-bottom: 2rem;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.03);
+        }
+
+        .cv-card h2 {
+            font-size: 1.5rem;
+            font-weight: 400;
+            margin-bottom: 1.5rem;
+            color: var(--text-primary);
+        }
+
+        /* General Information Table Layout */
+        .info-grid {
+            display: grid;
+            grid-template-columns: 160px 1fr;
+            row-gap: 0.8rem;
+            font-size: 0.95rem;
+        }
+
+        .info-label {
+            font-weight: 700;
+            color: var(--text-primary);
+        }
+
+        .info-value {
+            color: var(--text-primary);
+        }
+
+        .info-value a {
+            color: #7b2cbf;
+            text-decoration: none;
+        }
+
+        .info-value a:hover {
+            text-decoration: underline;
+        }
+
+        /* Education Timeline Layout */
+        .edu-item {
+            display: flex;
+            gap: 2rem;
+            padding-bottom: 1.5rem;
+            margin-bottom: 1.5rem;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .edu-item:last-child {
+            border-bottom: none;
+            padding-bottom: 0;
+            margin-bottom: 0;
+        }
+
+        .date-badge {
+            background: var(--insta-glow);
+            color: #ffffff;
+            font-size: 0.75rem;
+            font-weight: 700;
+            padding: 0.3rem 0.6rem;
+            border-radius: 4px;
+            height: fit-content;
+            white-space: nowrap;
+        }
+
+        .edu-details h3 {
+            font-size: 1.05rem;
+            font-weight: 700;
+            margin-bottom: 0.2rem;
+        }
+
+        .edu-details .institution {
+            color: var(--text-muted);
+            font-size: 0.95rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .edu-details ul {
+            list-style: none;
+            color: var(--text-muted);
+            font-size: 0.9rem;
+        }
+
+        .edu-details li::before {
+            content: "◦ ";
+        }
+    </style>
 </head>
 <body>
 
     <header>
         <nav>
-            <a href="index.html" class="logo">Your Name</a>
+            <a href="index.html" class="logo">Fathima</a>
             <div class="nav-right">
                 <ul class="nav-links">
-                    <li><a href="index.html">Home</a></li>
-                    <li><a href="education.html">Education</a></li>
-                    <li><a href="projects.html">Projects</a></li>
-                    <li><a href="cv.html" class="active">CV</a></li>
-                    <li><a href="miscellaneous.html">Misc</a></li>
+                    <li><a href="index.html">about</a></li>
+                    <li><a href="education.html">education</a></li>
+                    <li><a href="projects.html">projects</a></li>
+                    <li><a href="cv.html" class="active">cv</a></li>
+                    <li><a href="miscellaneous.html">miscellaneous</a></li>
                 </ul>
                 <button class="theme-toggle" id="themeBtn" onclick="toggleTheme()" aria-label="Toggle dark mode">☀️</button>
             </div>
@@ -26,19 +148,60 @@
     </header>
 
     <main>
-        <div class="card">
-            <h1>Curriculum Vitae</h1>
-            <div class="keywords-grid">
-                <span class="tag">Software Development</span>
-                <span class="tag">Frontend Engineering</span>
-                <span class="tag">Updated 2026</span>
+        <!-- Page Title & PDF Download Link -->
+        <div class="cv-header">
+            <h1>CV</h1>
+            <a href="your-resume.pdf" class="pdf-link" target="_blank" title="Download PDF Resume">
+                <svg class="pdf-icon" viewBox="0 0 24 24">
+                    <path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-9.5 8.5c0 .8-.7 1.5-1.5 1.5H7v2H5.5V9H8c.8 0 1.5.7 1.5 1.5v1zm5 2c0 .8-.7 1.5-1.5 1.5h-2.5V9H13c.8 0 1.5.7 1.5 1.5v3zm4-3.5h-3v1.5h2v1.5h-2V15h-1.5V9h4.5v1.5zM7 10.5h1v1H7v-1zm5 0h1v3h-1v-3z"/>
+                </svg>
+            </a>
+        </div>
+
+        <!-- General Information Card -->
+        <div class="cv-card">
+            <h2>General Information</h2>
+            <div class="info-grid">
+                <div class="info-label">Full Name</div>
+                <div class="info-value">Fathima</div>
+
+                <div class="info-label">Current Position</div>
+                <div class="info-value">Ph.D. Scholar at NIT Calicut</div>
+
+                <div class="info-label">E-mail ID</div>
+                <div class="info-value"><a href="mailto:fathima@nitc.ac.in">fathima@nitc.ac.in</a></div>
             </div>
-            <br>
-            <a href="your-resume.pdf" class="cv-download-btn" target="_blank">Download Resume (PDF)</a>
+        </div>
+
+        <!-- Education Card -->
+        <div class="cv-card">
+            <h2>Education</h2>
+            
+            <div class="edu-item">
+                <div class="date-badge">2024 - PRESENT</div>
+                <div class="edu-details">
+                    <h3>Ph.D.</h3>
+                    <p class="institution">National Institute of Technology (NIT), Calicut</p>
+                    <ul>
+                        <li>under supervision of Prof. [Supervisor Name]</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="edu-item">
+                <div class="date-badge">2021 - 2023</div>
+                <div class="edu-details">
+                    <h3>M.Sc. / M.Tech. (Your Degree Name)</h3>
+                    <p class="institution">Your Previous University Name</p>
+                    <ul>
+                        <li>Thesis - <i>Your thesis title here</i></li>
+                    </ul>
+                </div>
+            </div>
         </div>
     </main>
 
-    <footer>&copy; 2026 Your Name</footer>
+    <footer>&copy; 2026 Fathima</footer>
 
 </body>
 </html>
