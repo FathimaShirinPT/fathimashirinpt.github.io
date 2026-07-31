@@ -3,46 +3,161 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Your Name - Home</title>
+    <title>Fathima Shirin</title>
     <link rel="stylesheet" href="style.css">
     <script src="theme.js"></script>
+    <style>
+        /* Specific CSS styles matching the reference homepage layout */
+        
+        /* Navigation Lowercase Styling */
+        .nav-links a {
+            text-transform: lowercase;
+        }
+
+        .dropdown {
+            position: relative;
+            display: inline-block;
+        }
+
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: var(--card-bg);
+            min-width: 120px;
+            box-shadow: 0px 8px 16px rgba(0,0,0,0.1);
+            border: 1px solid var(--border-color);
+            border-radius: 6px;
+            z-index: 10;
+        }
+
+        .dropdown-content a {
+            color: var(--text-muted);
+            padding: 8px 12px;
+            text-decoration: none;
+            display: block;
+        }
+
+        .dropdown:hover .dropdown-content {
+            display: block;
+        }
+
+        /* Hero / About Section */
+        .hero-container {
+            display: grid;
+            grid-template-columns: 1fr 300px;
+            gap: 2.5rem;
+            align-items: start;
+            margin-top: 2rem;
+            margin-bottom: 2rem;
+        }
+
+        .hero-title {
+            font-size: 2.8rem;
+            font-weight: 300;
+            color: var(--text-primary);
+            margin-bottom: 0.2rem;
+            letter-spacing: -0.5px;
+        }
+
+        .hero-title strong {
+            font-weight: 700;
+        }
+
+        .hero-subtitle {
+            color: #c026d3; /* Soft vibrant purple */
+            font-size: 1.15rem;
+            font-weight: 400;
+            margin-bottom: 1.8rem;
+        }
+
+        .hero-bio {
+            font-size: 1.05rem;
+            line-height: 1.6;
+            color: var(--text-primary);
+        }
+
+        .hero-bio p {
+            margin-bottom: 1.2rem;
+        }
+
+        .purple-link {
+            color: #c026d3;
+            text-decoration: none;
+        }
+
+        .purple-link:hover {
+            text-decoration: underline;
+        }
+
+        .profile-img-hero {
+            width: 100%;
+            height: auto;
+            border-radius: 12px;
+            object-fit: cover;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+        }
+
+        /* Mobile Responsiveness */
+        @media (max-width: 768px) {
+            .hero-container {
+                grid-template-columns: 1fr;
+            }
+            .profile-img-hero {
+                max-width: 250px;
+                margin: 0 auto;
+            }
+        }
+    </style>
 </head>
 <body>
 
     <header>
         <nav>
-            <a href="index.html" class="logo">Your Name</a>
+            <a href="index.html" class="logo" style="visibility: hidden;">Fathima Shirin</a>
             <div class="nav-right">
                 <ul class="nav-links">
-                    <li><a href="index.html" class="active">Home</a></li>
-                    <li><a href="education.html">Education</a></li>
-                    <li><a href="projects.html">Projects</a></li>
-                    <li><a href="cv.html">CV</a></li>
-                    <li><a href="miscellaneous.html">Misc</a></li>
+                    <li><a href="index.html" class="active">about</a></li>
+                    <li><a href="education.html">research</a></li>
+                    <li><a href="projects.html">talks, etc.</a></li>
+                    <li><a href="cv.html">cv</a></li>
+                    <li><a href="miscellaneous.html">miscellaneous</a></li>
+                    <li class="dropdown">
+                        <a href="#">more ▾</a>
+                        <div class="dropdown-content">
+                            <a href="#">Teaching</a>
+                            <a href="#">Outreach</a>
+                        </div>
+                    </li>
                 </ul>
-                <button class="theme-toggle" id="themeBtn" onclick="toggleTheme()" aria-label="Toggle dark mode">☀️</button>
+                <button class="theme-toggle" id="themeBtn" onclick="toggleTheme()" aria-label="Toggle dark mode">🌙</button>
             </div>
         </nav>
     </header>
 
     <main>
-        <section class="hero">
-            <div class="profile-ring">
-                <img src="profile.jpg" alt="Your Name" class="profile-img">
+        <!-- Hero / Top Section -->
+        <div class="hero-container">
+            <div class="hero-text-block">
+                <h1 class="hero-title"><strong>Fathima</strong> Shirin</h1>
+                <div class="hero-subtitle">National Institute of Technology, Calicut</div>
+
+                <div class="hero-bio">
+                    <p>
+                        Hi! I am Fathima Shirin, a Ph.D. scholar at the <a href="https://nitc.ac.in" class="purple-link" target="_blank">National Institute of Technology Calicut</a>.
+                    </p>
+                    <p>
+                        Welcome to my website! You can navigate through the links above to learn more about my research, background, and academic activities.
+                    </p>
+                </div>
             </div>
-            <h1>Your Name</h1>
-            <p>Brief intro about yourself goes here. A clean overview of skills and experience.</p>
-            
-            <div class="topic-links">
-                <a href="education.html" class="topic-btn">Education</a>
-                <a href="projects.html" class="topic-btn">Projects</a>
-                <a href="cv.html" class="topic-btn">CV</a>
-                <a href="miscellaneous.html" class="topic-btn">Miscellaneous</a>
+
+            <div class="hero-image-block">
+                <img src="profile.jpg" alt="Fathima Shirin" class="profile-img-hero">
             </div>
-        </section>
+        </div>
     </main>
 
-    <footer>&copy; 2026 Your Name</footer>
+    <footer>&copy; 2026 Fathima Shirin</footer>
 
 </body>
 </html>
