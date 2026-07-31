@@ -3,314 +3,46 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Portfolio</title>
-    <style>
-        /* Modern, Smoothed Color Palette */
-        :root {
-            --bg-gradient: linear-gradient(135deg, #0d1b2a 0%, #1b1b3a 50%, #2a0826 100%);
-            --card-bg: rgba(255, 255, 255, 0.05);
-            --card-border: rgba(255, 255, 255, 0.12);
-            --text-primary: #f1f5f9;
-            --text-secondary: #94a3b8;
-            --insta-teal-glow: linear-gradient(135deg, #00b4d8 0%, #7b2cbf 50%, #e01e37 100%);
-            --tag-bg: rgba(255, 255, 255, 0.08);
-            --tag-hover: linear-gradient(135deg, #00b4d8, #7b2cbf);
-        }
-
-        * {
-            box-sizing: border-box;
-            margin: 0;
-            padding: 0;
-            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-            scroll-behavior: smooth;
-        }
-
-        body {
-            background: var(--bg-gradient);
-            background-attachment: fixed;
-            color: var(--text-primary);
-            min-height: 100vh;
-        }
-
-        /* Sticky Navigation Bar */
-        header {
-            position: sticky;
-            top: 0;
-            backdrop-filter: blur(15px);
-            background: rgba(13, 27, 42, 0.6);
-            border-bottom: 1px solid var(--card-border);
-            z-index: 100;
-        }
-
-        nav {
-            max-width: 900px;
-            margin: 0 auto;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 1rem 2rem;
-        }
-
-        .logo {
-            font-weight: 700;
-            font-size: 1.1rem;
-            letter-spacing: 0.5px;
-            background: var(--insta-teal-glow);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-        }
-
-        .nav-links {
-            display: flex;
-            list-style: none;
-            gap: 1.5rem;
-        }
-
-        .nav-links a {
-            text-decoration: none;
-            color: var(--text-secondary);
-            font-size: 0.95rem;
-            font-weight: 500;
-            transition: color 0.3s ease;
-        }
-
-        .nav-links a:hover {
-            color: #00b4d8;
-        }
-
-        /* Hero / First Page Section */
-        .hero-section {
-            min-height: calc(100vh - 60px);
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            text-align: center;
-            padding: 2rem;
-        }
-
-        .profile-ring {
-            padding: 4px;
-            border-radius: 50%;
-            background: var(--insta-teal-glow);
-            margin-bottom: 1.5rem;
-            box-shadow: 0 10px 30px rgba(123, 44, 191, 0.3);
-        }
-
-        .profile-img {
-            width: 150px;
-            height: 150px;
-            border-radius: 50%;
-            object-fit: cover;
-            display: block;
-            background: #111;
-        }
-
-        .hero-title {
-            font-size: 2.5rem;
-            font-weight: 700;
-            margin-bottom: 0.5rem;
-        }
-
-        .hero-bio {
-            color: var(--text-secondary);
-            max-width: 500px;
-            font-size: 1.05rem;
-            margin-bottom: 2rem;
-            line-height: 1.5;
-        }
-
-        /* Topic Links Container on Main Page */
-        .hero-nav-cards {
-            display: flex;
-            gap: 1rem;
-            flex-wrap: wrap;
-            justify-content: center;
-        }
-
-        .hero-card-link {
-            padding: 0.6rem 1.4rem;
-            border-radius: 30px;
-            background: var(--card-bg);
-            border: 1px solid var(--card-border);
-            color: var(--text-primary);
-            text-decoration: none;
-            font-size: 0.9rem;
-            font-weight: 500;
-            transition: all 0.3s ease;
-        }
-
-        .hero-card-link:hover {
-            background: var(--tag-hover);
-            border-color: transparent;
-            transform: translateY(-2px);
-            box-shadow: 0 5px 15px rgba(0, 180, 216, 0.3);
-        }
-
-        /* Keyword Content Sections */
-        .content-section {
-            min-height: 80vh;
-            max-width: 900px;
-            margin: 0 auto;
-            padding: 5rem 2rem 2rem 2rem;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-        }
-
-        .section-card {
-            background: var(--card-bg);
-            border: 1px solid var(--card-border);
-            border-radius: 20px;
-            padding: 3rem 2.5rem;
-            backdrop-filter: blur(10px);
-        }
-
-        .section-title {
-            font-size: 1.8rem;
-            margin-bottom: 1.5rem;
-            background: var(--insta-teal-glow);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-        }
-
-        /* Keyword / Tag Grid */
-        .keyword-grid {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 0.8rem;
-        }
-
-        .tag {
-            background: var(--tag-bg);
-            border: 1px solid var(--card-border);
-            padding: 0.5rem 1.1rem;
-            border-radius: 8px;
-            font-size: 0.95rem;
-            color: var(--text-primary);
-            transition: background 0.3s ease;
-        }
-
-        .tag:hover {
-            background: rgba(255, 255, 255, 0.15);
-        }
-
-        .cv-button {
-            display: inline-block;
-            margin-top: 1rem;
-            padding: 0.8rem 2rem;
-            border-radius: 30px;
-            background: var(--insta-teal-glow);
-            color: #fff;
-            text-decoration: none;
-            font-weight: 600;
-            box-shadow: 0 4px 20px rgba(123, 44, 191, 0.4);
-            transition: transform 0.2s ease;
-        }
-
-        .cv-button:hover {
-            transform: translateY(-2px);
-        }
-
-        footer {
-            text-align: center;
-            padding: 3rem 0;
-            color: var(--text-secondary);
-            font-size: 0.85rem;
-        }
-    </style>
+    <title>Your Name - Home</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="theme.js"></script>
 </head>
 <body>
 
-    <!-- Header Navigation -->
     <header>
         <nav>
-            <div class="logo">Your Name</div>
-            <ul class="nav-links">
-                <li><a href="#home">Home</a></li>
-                <li><a href="#education">Education</a></li>
-                <li><a href="#projects">Projects</a></li>
-                <li><a href="#cv">CV</a></li>
-                <li><a href="#miscellaneous">Misc</a></li>
-            </ul>
+            <a href="index.html" class="logo">Your Name</a>
+            <div class="nav-right">
+                <ul class="nav-links">
+                    <li><a href="index.html" class="active">Home</a></li>
+                    <li><a href="education.html">Education</a></li>
+                    <li><a href="projects.html">Projects</a></li>
+                    <li><a href="cv.html">CV</a></li>
+                    <li><a href="miscellaneous.html">Misc</a></li>
+                </ul>
+                <button class="theme-toggle" onclick="toggleTheme()">🌓 Theme</button>
+            </div>
         </nav>
     </header>
 
-    <!-- First Page / Main Intro Section -->
-    <section class="hero-section" id="home">
-        <div class="profile-ring">
-            <img src="profile.jpg" alt="Your Name" class="profile-img">
-        </div>
-        <h1 class="hero-title">Your Name</h1>
-        <p class="hero-bio">A minimal overview of my education, projects, and key background areas.</p>
-        
-        <!-- Jump Links -->
-        <div class="hero-nav-cards">
-            <a href="#education" class="hero-card-link">Education</a>
-            <a href="#projects" class="hero-card-link">Projects</a>
-            <a href="#cv" class="hero-card-link">CV</a>
-            <a href="#miscellaneous" class="hero-card-link">Miscellaneous</a>
-        </div>
-    </section>
-
-    <!-- Education Page Section -->
-    <section class="content-section" id="education">
-        <div class="section-card">
-            <h2 class="section-title">Education</h2>
-            <div class="keyword-grid">
-                <span class="tag">B.S. Computer Science</span>
-                <span class="tag">University Name</span>
-                <span class="tag">Data Structures</span>
-                <span class="tag">Web Development</span>
-                <span class="tag">Algorithms</span>
-                <span class="tag">Graduating 2026</span>
+    <main>
+        <section class="hero">
+            <div class="profile-ring">
+                <img src="profile.jpg" alt="Your Name" class="profile-img">
             </div>
-        </div>
-    </section>
-
-    <!-- Projects Page Section -->
-    <section class="content-section" id="projects">
-        <div class="section-card">
-            <h2 class="section-title">Projects</h2>
-            <div class="keyword-grid">
-                <span class="tag">Portfolio Web App</span>
-                <span class="tag">React & Node.js</span>
-                <span class="tag">AI Chat Interface</span>
-                <span class="tag">Open Source Tools</span>
-                <span class="tag">UI/UX Design</span>
+            <h1>Your Name</h1>
+            <p>Brief intro about yourself goes here. A clean overview of skills and experience.</p>
+            
+            <div class="topic-links">
+                <a href="education.html" class="topic-btn">Education</a>
+                <a href="projects.html" class="topic-btn">Projects</a>
+                <a href="cv.html" class="topic-btn">CV</a>
+                <a href="miscellaneous.html" class="topic-btn">Miscellaneous</a>
             </div>
-        </div>
-    </section>
+        </section>
+    </main>
 
-    <!-- CV Page Section -->
-    <section class="content-section" id="cv">
-        <div class="section-card">
-            <h2 class="section-title">Curriculum Vitae</h2>
-            <div class="keyword-grid" style="margin-bottom: 1.5rem;">
-                <span class="tag">Resume Updated 2026</span>
-                <span class="tag">PDF Format</span>
-            </div>
-            <a href="your-resume.pdf" class="cv-button" target="_blank">View Full CV</a>
-        </div>
-    </section>
-
-    <!-- Miscellaneous Page Section -->
-    <section class="content-section" id="miscellaneous">
-        <div class="section-card">
-            <h2 class="section-title">Miscellaneous</h2>
-            <div class="keyword-grid">
-                <span class="tag">Photography</span>
-                <span class="tag">Digital Design</span>
-                <span class="tag">Open Source</span>
-                <span class="tag">Blogging</span>
-                <span class="tag">Certifications</span>
-            </div>
-        </div>
-    </section>
-
-    <footer>
-        <p>&copy; 2026 Your Name</p>
-    </footer>
+    <footer>&copy; 2026 Your Name</footer>
 
 </body>
 </html>
