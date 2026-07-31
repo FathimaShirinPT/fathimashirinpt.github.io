@@ -3,41 +3,67 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Projects</title>
+    <title>Projects - Fathima Shirin</title>
     <link rel="stylesheet" href="style.css">
     <script src="theme.js"></script>
+    <style>
+        .projects-card {
+            background: var(--card-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            padding: 2rem;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.03);
+        }
+
+        .projects-card h1 {
+            font-size: 1.8rem;
+            font-weight: 400;
+            margin-bottom: 1.5rem;
+        }
+
+        .keywords-grid {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.8rem;
+        }
+
+        .tag {
+            background: var(--tag-bg);
+            border: 1px solid var(--border-color);
+            padding: 0.5rem 1.1rem;
+            border-radius: 6px;
+            font-size: 0.95rem;
+        }
+    </style>
 </head>
 <body>
 
     <header>
         <nav>
-            <a href="index.html" class="logo">Your Name</a>
             <div class="nav-right">
                 <ul class="nav-links">
-                    <li><a href="index.html">Home</a></li>
-                    <li><a href="education.html">Education</a></li>
-                    <li><a href="projects.html" class="active">Projects</a></li>
-                    <li><a href="cv.html">CV</a></li>
-                    <li><a href="miscellaneous.html">Misc</a></li>
+                    <li><a href="index.html">about</a></li>
+                    <li><a href="projects.html" class="active">projects</a></li>
+                    <li><a href="cv.html">cv</a></li>
                 </ul>
-                <button class="theme-toggle" id="themeBtn" onclick="toggleTheme()" aria-label="Toggle dark mode">☀️</button>
+                <button class="theme-toggle" id="themeBtn" onclick="toggleTheme()" aria-label="Toggle theme">☀️</button>
             </div>
         </nav>
     </header>
 
     <main>
-        <div class="card">
+        <div class="projects-card">
             <h1>Projects</h1>
             <div class="keywords-grid">
-                <span class="tag">Portfolio Web App</span>
-                <span class="tag">JavaScript & CSS</span>
-                <span class="tag">AI Chat Interfaces</span>
-                <span class="tag">UI/UX Design</span>
+                <span class="tag">Ph.D. Research Projects</span>
+                <span class="tag">Computational Analysis</span>
+                <span class="tag">Data Modeling</span>
+                <span class="tag">NIT Calicut Studies</span>
             </div>
         </div>
     </main>
 
-    <footer>&copy; 2026 Your Name</footer>
+    <footer>&copy; 2026 Fathima Shirin</footer>
 
 </body>
 </html>
