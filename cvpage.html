@@ -3,11 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CV - Fathima</title>
+    <title>CV - Fathima Shirin</title>
     <link rel="stylesheet" href="style.css">
     <script src="theme.js"></script>
     <style>
-        /* Specific CSS styles matching the reference image layout */
         .cv-header {
             display: flex;
             justify-content: space-between;
@@ -17,8 +16,7 @@
 
         .cv-header h1 {
             font-size: 2.2rem;
-            font-weight: 500;
-            color: var(--text-primary);
+            font-weight: 400;
         }
 
         .pdf-link {
@@ -35,7 +33,7 @@
         .pdf-icon {
             width: 32px;
             height: 32px;
-            fill: #a21caf; /* Purple accent color */
+            fill: #a21caf;
         }
 
         .cv-card {
@@ -51,10 +49,8 @@
             font-size: 1.5rem;
             font-weight: 400;
             margin-bottom: 1.5rem;
-            color: var(--text-primary);
         }
 
-        /* General Information Table Layout */
         .info-grid {
             display: grid;
             grid-template-columns: 160px 1fr;
@@ -64,15 +60,10 @@
 
         .info-label {
             font-weight: 700;
-            color: var(--text-primary);
-        }
-
-        .info-value {
-            color: var(--text-primary);
         }
 
         .info-value a {
-            color: #7b2cbf;
+            color: var(--accent-purple);
             text-decoration: none;
         }
 
@@ -80,7 +71,6 @@
             text-decoration: underline;
         }
 
-        /* Education Timeline Layout */
         .edu-item {
             display: flex;
             gap: 2rem;
@@ -96,7 +86,7 @@
         }
 
         .date-badge {
-            background: var(--insta-glow);
+            background: #a21caf;
             color: #ffffff;
             font-size: 0.75rem;
             font-weight: 700;
@@ -133,22 +123,18 @@
 
     <header>
         <nav>
-            <a href="index.html" class="logo">Fathima</a>
             <div class="nav-right">
                 <ul class="nav-links">
                     <li><a href="index.html">about</a></li>
-                    <li><a href="education.html">education</a></li>
                     <li><a href="projects.html">projects</a></li>
                     <li><a href="cv.html" class="active">cv</a></li>
-                    <li><a href="miscellaneous.html">miscellaneous</a></li>
                 </ul>
-                <button class="theme-toggle" id="themeBtn" onclick="toggleTheme()" aria-label="Toggle dark mode">☀️</button>
+                <button class="theme-toggle" id="themeBtn" onclick="toggleTheme()" aria-label="Toggle theme">☀️</button>
             </div>
         </nav>
     </header>
 
     <main>
-        <!-- Page Title & PDF Download Link -->
         <div class="cv-header">
             <h1>CV</h1>
             <a href="your-resume.pdf" class="pdf-link" target="_blank" title="Download PDF Resume">
@@ -158,12 +144,12 @@
             </a>
         </div>
 
-        <!-- General Information Card -->
+        <!-- General Information -->
         <div class="cv-card">
             <h2>General Information</h2>
             <div class="info-grid">
                 <div class="info-label">Full Name</div>
-                <div class="info-value">Fathima</div>
+                <div class="info-value">Fathima Shirin</div>
 
                 <div class="info-label">Current Position</div>
                 <div class="info-value">Ph.D. Scholar at NIT Calicut</div>
@@ -173,7 +159,7 @@
             </div>
         </div>
 
-        <!-- Education Card -->
+        <!-- Education -->
         <div class="cv-card">
             <h2>Education</h2>
             
@@ -191,17 +177,17 @@
             <div class="edu-item">
                 <div class="date-badge">2021 - 2023</div>
                 <div class="edu-details">
-                    <h3>M.Sc. / M.Tech. (Your Degree Name)</h3>
-                    <p class="institution">Your Previous University Name</p>
+                    <h3>M.Sc. / M.Tech.</h3>
+                    <p class="institution">Previous Institution Name</p>
                     <ul>
-                        <li>Thesis - <i>Your thesis title here</i></li>
+                        <li>Thesis - <i>Your Master's Thesis Title</i></li>
                     </ul>
                 </div>
             </div>
         </div>
     </main>
 
-    <footer>&copy; 2026 Fathima</footer>
+    <footer>&copy; 2026 Fathima Shirin</footer>
 
 </body>
 </html>
