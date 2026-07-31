@@ -4,208 +4,159 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>CV - Fathima Shirin P T</title>
-    <link rel="stylesheet" href="style.css?v=4">
+
+    <link rel="stylesheet" href="style.css?v=5">
     <script src="theme.js"></script>
-    <style>
-        .cv-header {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            margin-bottom: 2rem;
-        }
-
-        .cv-header h1 {
-            font-size: 2.2rem;
-            font-weight: 400;
-        }
-
-        .pdf-link {
-            display: flex;
-            align-items: center;
-            text-decoration: none;
-            transition: transform 0.2s ease;
-        }
-
-        .pdf-link:hover {
-            transform: scale(1.1);
-        }
-
-        .pdf-icon {
-            width: 32px;
-            height: 32px;
-            fill: var(--accent-color);
-        }
-
-        .cv-card {
-            background: var(--card-bg);
-            border: 1px solid var(--border-color);
-            border-radius: 8px;
-            padding: 2rem;
-            margin-bottom: 2rem;
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.03);
-        }
-
-        .cv-card h2 {
-            font-size: 1.5rem;
-            font-weight: 400;
-            margin-bottom: 1.5rem;
-        }
-
-        .info-grid {
-            display: grid;
-            grid-template-columns: 160px 1fr;
-            row-gap: 0.8rem;
-            font-size: 0.95rem;
-        }
-
-        .info-label {
-            font-weight: 700;
-        }
-
-        .info-value a {
-            color: var(--accent-color);
-            text-decoration: none;
-        }
-
-        .info-value a:hover {
-            text-decoration: underline;
-        }
-
-        .edu-item {
-            display: flex;
-            gap: 2rem;
-            padding-bottom: 1.5rem;
-            margin-bottom: 1.5rem;
-            border-bottom: 1px solid var(--border-color);
-        }
-
-        .edu-item:last-child {
-            border-bottom: none;
-            padding-bottom: 0;
-            margin-bottom: 0;
-        }
-
-        .date-badge {
-    background: var(--badge-bg);
-    color: #fff;
-    font-size: 0.75rem;
-    font-weight: 700;
-    padding: 0.35rem 0.7rem;
-    border-radius: 4px;
-    width: 110px;          /* Fixed width */
-    text-align: center;
-    flex-shrink: 0;
-    white-space: nowrap;
-}
-
-        .edu-details h3 {
-            font-size: 1.05rem;
-            font-weight: 700;
-            margin-bottom: 0.2rem;
-        }
-
-        .edu-details .institution {
-            color: var(--text-muted);
-            font-size: 0.95rem;
-            margin-bottom: 0.5rem;
-        }
-
-        .edu-details ul {
-            list-style: none;
-            color: var(--text-muted);
-            font-size: 0.9rem;
-        }
-
-        .edu-details li::before {
-            content: "◦ ";
-        }
-    </style>
 </head>
+
 <body>
 
-    <header>
-        <nav>
-            <div class="nav-right">
-                <ul class="nav-links">
-                    <li><a href="index.html">about</a></li>
-                    <li><a href="projects.html">projects</a></li>
-                    <li><a href="cv.html" class="active">cv</a></li>
+<header>
+    <nav>
+        <div class="nav-right">
+            <ul class="nav-links">
+                <li><a href="index.html">about</a></li>
+                <li><a href="projects.html">projects</a></li>
+                <li><a href="cv.html" class="active">cv</a></li>
+            </ul>
+
+            <button class="theme-toggle"
+                    id="themeBtn"
+                    onclick="toggleTheme()"
+                    aria-label="Toggle theme">
+                ☀️
+            </button>
+        </div>
+    </nav>
+</header>
+
+<main>
+
+    <!-- Header -->
+    <div class="cv-header">
+        <h1>Curriculum Vitae</h1>
+
+        <a href="your-resume.pdf"
+           class="pdf-link"
+           target="_blank"
+           title="Download PDF">
+
+            <svg class="pdf-icon" viewBox="0 0 24 24">
+                <path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-9.5 8.5c0 .8-.7 1.5-1.5 1.5H7v2H5.5V9H8c.8 0 1.5.7 1.5 1.5v1zm5 2c0 .8-.7 1.5-1.5 1.5h-2.5V9H13c.8 0 1.5.7 1.5 1.5v3zm4-3.5h-3v1.5h2v1.5h-2V15h-1.5V9h4.5v1.5zM7 10.5h1v1H7v-1zm5 0h1v3h-1v-3z"/>
+            </svg>
+
+        </a>
+    </div>
+
+    <!-- General Information -->
+
+    <div class="cv-card">
+
+        <h2>General Information</h2>
+
+        <div class="info-grid">
+
+            <div class="info-label">Full Name</div>
+            <div class="info-value">Fathima Shirin P T</div>
+
+            <div class="info-label">Current Affiliation</div>
+            <div class="info-value">
+                National Institute of Technology Calicut
+            </div>
+
+            <div class="info-label">E-mail</div>
+            <div class="info-value">
+                <a href="mailto:fathima_p250546ph@nitc.ac.in">
+                    fathima_p250546ph@nitc.ac.in
+                </a>
+            </div>
+
+        </div>
+
+    </div>
+
+    <!-- Education -->
+
+    <div class="cv-card">
+
+        <h2>Education</h2>
+
+        <div class="edu-item">
+
+            <div class="date-badge">
+                2025 – PRESENT
+            </div>
+
+            <div class="edu-details">
+
+                <h3>Ph.D. in Physics</h3>
+
+                <p class="institution">
+                    National Institute of Technology Calicut
+                </p>
+
+                <ul>
+                    <li>Under the supervision of Dr. Ram Ajor Maurya.</li>
                 </ul>
-                <button class="theme-toggle" id="themeBtn" onclick="toggleTheme()" aria-label="Toggle theme">☀️</button>
+
             </div>
-        </nav>
-    </header>
 
-    <main>
-        <div class="cv-header">
-            <h1>CV</h1>
-            <a href="your-resume.pdf" class="pdf-link" target="_blank" title="Download PDF Resume">
-                <svg class="pdf-icon" viewBox="0 0 24 24">
-                    <path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-9.5 8.5c0 .8-.7 1.5-1.5 1.5H7v2H5.5V9H8c.8 0 1.5.7 1.5 1.5v1zm5 2c0 .8-.7 1.5-1.5 1.5h-2.5V9H13c.8 0 1.5.7 1.5 1.5v3zm4-3.5h-3v1.5h2v1.5h-2V15h-1.5V9h4.5v1.5zM7 10.5h1v1H7v-1zm5 0h1v3h-1v-3z"/>
-                </svg>
-            </a>
         </div>
 
-        <!-- General Information Card -->
-        <div class="cv-card">
-            <h2>General Information</h2>
-            <div class="info-grid">
-                <div class="info-label">Full Name</div>
-                <div class="info-value">Fathima Shirin P T</div>
+        <div class="edu-item">
 
-                <div class="info-label">Current Affiliation</div>
-                <div class="info-value">NIT Calicut</div>
-
-                <div class="info-label">E-mail ID</div>
-                <div class="info-value"><a href="mailto:fathima_p250546ph@nitc.ac.in">fathima@nitc.ac.in</a></div>
+            <div class="date-badge">
+                2020 – 2022
             </div>
+
+            <div class="edu-details">
+
+                <h3>M.Sc. Physics</h3>
+
+                <p class="institution">
+                    National Institute of Technology Tiruchirappalli
+                </p>
+
+                <ul>
+                    <li>
+                        Thesis –
+                        <i>
+                            Effect of dipolar interaction on the heating
+                            characteristics of Mn-doped
+                            Fe<sub>3</sub>O<sub>4</sub>.
+                        </i>
+                    </li>
+                </ul>
+
+            </div>
+
         </div>
 
-        <!-- Education Card -->
-        <div class="cv-card">
-    <h2>Education</h2>
+        <div class="edu-item">
 
-    <div class="edu-item">
-        <div class="date-badge">2025 – PRESENT</div>
+            <div class="date-badge">
+                2017 – 2020
+            </div>
 
-        <div class="edu-details">
-            <h3>Ph.D.</h3>
-            <p class="institution">National Institute of Technology (NIT), Calicut</p>
-            <ul>
-                <li>Under supervision of Dr. Ram Ajor Maurya</li>
-            </ul>
+            <div class="edu-details">
+
+                <h3>B.Sc. Physics</h3>
+
+                <p class="institution">
+                    Hindu College, University of Delhi
+                </p>
+
+            </div>
+
         </div>
+
     </div>
 
-    <div class="edu-item">
-        <div class="date-badge">2020 – 2022</div>
+</main>
 
-        <div class="edu-details">
-            <h3>M.Sc. Physics</h3>
-            <p class="institution">National Institute of Technology, Tiruchirappalli</p>
-            <ul>
-                <li>
-                    Thesis – <i>Effect of dipolar interaction on the heating characteristics of Mn-doped Fe<sub>3</sub>O<sub>4</sub></i>
-                </li>
-            </ul>
-        </div>
-    </div>
-
-    <div class="edu-item">
-        <div class="date-badge">2017 – 2020</div>
-
-        <div class="edu-details">
-            <h3>B.Sc. Physics</h3>
-            <p class="institution">Hindu College, University of Delhi</p>
-        </div>
-    </div>
-
-</div>
-
-    </main>
-
-    <footer>&copy; 2026 Fathima Shirin</footer>
+<footer>
+    &copy; 2026 Fathima Shirin
+</footer>
 
 </body>
 </html>
-
