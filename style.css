@@ -1,38 +1,40 @@
-/* Color Palette Variables */
+/* Color Palette Extracted from Artwork:
+   Dark Navy Teal | Deep Petrol Teal | Burnt Rust | Ochre Brown | Vibrant Warm Orange | Light Powder Teal
+*/
+
 :root {
-    /* Light Mode: Dark Maroon, Blood Red, Vibrant Purple */
-    --bg-color: #fcf8f8;
-    --card-bg: #ffffff;
-    --text-primary: #1a0505;
-    --text-muted: #664d4d;
-    --border-color: #f0d5d5;
+    /* LIGHT MODE: Darker, rich shades for high contrast readability */
+    --bg-color: #f6f8f9;               /* Clean off-white background */
+    --card-bg: #ffffff;               /* Crisp card background */
+    --text-primary: #152228;          /* Deep dark slate navy text */
+    --text-muted: #485c66;           /* Muted petrol teal text */
     
-    --maroon-deep: #4a0404;
-    --blood-red: #8b0000;
-    --vibrant-purple: #a21caf;
-    
-    --accent-color: var(--vibrant-purple);
-    --badge-bg: var(--blood-red);
-    --tag-bg: #f5e6e6;
+    --primary-accent: #20414d;       /* Dark petrol teal for headings & primary accents */
+    --secondary-accent: #bb400e;     /* Deep burnt rust for buttons, links & borders */
+    --highlight: #9c4f10;            /* Warm ochre for secondary elements */
+
+    --border-color: #d8e2e6;          /* Soft slate blue border */
+    --card-border: #bb400e;           /* Burnt rust accent border */
+    --tag-bg: #eaf0f2;                /* Light powder teal tag background */
 }
 
 [data-theme="dark"] {
-    /* Dark Mode: Teal Blue, ISRO Logo Blue & Orange */
-    --bg-color: #0d1117;
-    --card-bg: #161b22;
-    --text-primary: #f0f6fc;
-    --text-muted: #8b949e;
-    --border-color: #30363d;
+    /* DARK MODE: Lighter, vibrant shades for contrast on dark backgrounds */
+    --bg-color: #0f181c;               /* Deep slate dark canvas */
+    --card-bg: #18252c;               /* Dark petrol card background */
+    --text-primary: #e6f0f3;          /* Soft light teal text */
+    --text-muted: #9bb0b8;           /* Muted sage-blue text */
     
-    --teal-blue: #008080;
-    --isro-blue: #0055ff;
-    --isro-orange: #ff6600;
-    
-    --accent-color: var(--isro-orange);
-    --badge-bg: var(--isro-blue);
-    --tag-bg: #1f2937;
+    --primary-accent: #a4c4cc;       /* Soft light powder teal for headings */
+    --secondary-accent: #f07826;     /* Vibrant warm orange for active links & buttons */
+    --highlight: #d15d19;            /* Bright burnt orange for badges & highlights */
+
+    --border-color: #2a3c45;          /* Muted dark slate border */
+    --card-border: #f07826;           /* Orange accent border */
+    --tag-bg: #23343c;                /* Dark teal tag background */
 }
 
+/* Base Reset & Typography */
 * {
     box-sizing: border-box;
     margin: 0;
@@ -49,8 +51,11 @@ body {
     flex-direction: column;
 }
 
+/* Header & Navigation */
 header {
-    background: var(--bg-color);
+    background: var(--card-bg);
+    border-top: 5px solid var(--primary-accent);
+    border-bottom: 1px solid var(--border-color);
 }
 
 nav {
@@ -59,56 +64,83 @@ nav {
     display: flex;
     justify-content: flex-end;
     align-items: center;
-    padding: 1.5rem 2rem;
+    padding: 1.2rem 2rem;
 }
 
 .nav-right {
     display: flex;
     align-items: center;
-    gap: 1.5rem;
+    gap: 1.8rem;
 }
 
 .nav-links {
     display: flex;
     list-style: none;
-    gap: 1.2rem;
+    gap: 1.5rem;
 }
 
 .nav-links a {
     text-decoration: none;
     color: var(--text-muted);
-    font-size: 0.95rem;
+    font-size: 1rem;
+    font-weight: 600;
     text-transform: lowercase;
-    font-weight: 500;
 }
 
 .nav-links a:hover,
 .nav-links a.active {
-    color: var(--accent-color);
+    color: var(--secondary-accent);
+    border-bottom: 2px solid var(--secondary-accent);
 }
 
+/* Theme Toggle Button */
 .theme-toggle {
-    background: none;
-    border: none;
+    background: var(--tag-bg);
+    border: 1px solid var(--border-color);
+    color: var(--text-primary);
+    padding: 0.4rem 0.8rem;
+    border-radius: 20px;
     cursor: pointer;
-    font-size: 1.2rem;
+    font-size: 1rem;
     display: flex;
     align-items: center;
     justify-content: center;
 }
 
+/* Layout */
 main {
     flex: 1;
     max-width: 850px;
     width: 100%;
-    margin: 1rem auto 3rem auto;
+    margin: 2rem auto 3rem auto;
     padding: 0 2rem;
 }
 
+/* Typography & Links */
+h1, h2, h3 {
+    color: var(--primary-accent);
+}
+
+a {
+    color: var(--secondary-accent);
+}
+
+/* Cards */
+.card, .cv-card, .projects-card {
+    background: var(--card-bg);
+    border: 1px solid var(--border-color);
+    border-left: 4px solid var(--card-border);
+    border-radius: 8px;
+    padding: 2rem;
+    margin-bottom: 2rem;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+}
+
+/* Footer */
 footer {
     text-align: center;
     padding: 2rem;
     color: var(--text-muted);
     font-size: 0.85rem;
+    border-top: 1px solid var(--border-color);
 }
-/* update */
