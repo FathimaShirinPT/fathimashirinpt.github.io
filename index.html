@@ -19,16 +19,23 @@
             font-size: 2.8rem;
             font-weight: 300;
             letter-spacing: -0.5px;
+            color: var(--text-primary);
         }
 
         .hero-title strong {
             font-weight: 700;
+            color: var(--maroon-deep);
+        }
+
+        [data-theme="dark"] .hero-title strong {
+            color: var(--teal-blue);
         }
 
         .hero-subtitle {
-            color: var(--accent-purple);
+            color: var(--accent-color);
             font-size: 1.1rem;
             margin-bottom: 1.8rem;
+            font-weight: 500;
         }
 
         .hero-bio {
@@ -40,12 +47,12 @@
             margin-bottom: 1rem;
         }
 
-        .purple-link {
-            color: var(--accent-purple);
+        .accent-link {
+            color: var(--accent-color);
             text-decoration: none;
         }
 
-        .purple-link:hover {
+        .accent-link:hover {
             text-decoration: underline;
         }
 
@@ -53,7 +60,7 @@
             width: 100%;
             border-radius: 12px;
             object-fit: cover;
-            box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
         }
 
         @media (max-width: 768px) {
@@ -90,10 +97,10 @@
 
                 <div class="hero-bio">
                     <p>
-                        Hi! I am Fathima Shirin, a Ph.D. scholar at the <a href="https://nitc.ac.in" class="purple-link" target="_blank">National Institute of Technology Calicut</a>.
+                        Hi! I am Fathima Shirin, a Ph.D. scholar at the <a href="https://nitc.ac.in" class="accent-link" target="_blank">National Institute of Technology Calicut</a>.
                     </p>
                     <p>
-                        Welcome to my website! You can explore my <a href="projects.html" class="purple-link">projects</a> or view my <a href="cv.html" class="purple-link">cv</a> using the navigation links above.
+                        Welcome to my website! You can explore my <a href="projects.html" class="accent-link">projects</a> or view my <a href="cv.html" class="accent-link">cv</a> using the navigation links above.
                     </p>
                 </div>
             </div>
